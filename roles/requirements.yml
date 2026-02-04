@@ -1,0 +1,4 @@
+---
+# Added for general usage
+ - src: git+https://github.com/rmassey411/ans_windows_misc_role.git
+   scm: git

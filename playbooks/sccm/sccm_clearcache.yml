@@ -1,0 +1,15 @@
+---
+- name: Clear cache
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Import role for windows reboot
+      ansible.windows.win_powershell:
+        script: |
+          [__comobject]$CCMComObject = New-Object -ComObject 'UIResource.UIResourceMgr'
+          $CacheInfo = $CCMComObject.GetCacheInfo().GetCacheElements()
+          foreach ($CacheItem in $CacheInfo) {
+              $null = $CCMComObject.GetCacheInfo().DeleteCacheElement([string]$($CacheItem.CacheElementID))
+          }
+      check_mode: yes

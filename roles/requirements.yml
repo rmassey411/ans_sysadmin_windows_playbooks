@@ -1,4 +1,6 @@
 ---
 # Added for general usage
- - src: git+https://github.com/rmassey411/ans_sysadmin_windows_role.git
+ - src: git+https://github.com/rmassey411/ans_microsoft_windows_role.git
+   scm: git
+ - src: git+https://github.com/rmassey411/ans_microsoft_sccm_role.git
    scm: git
